@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -23,9 +24,15 @@ public class Main {
         }
 
         // Определить медианное значение
-        double med = arr[n/2];
+        Arrays.sort(arr);
+        double med;
+        if(n % 2 > 0){
+            med = (arr[n/2] + arr[n/2 + 1]) / 2;
+        }
+        else {
+            med = arr[n / 2];
+        }
         System.out.println("медианное значение: " + med);
-
     }
 
     static File getFileFromUser(){
